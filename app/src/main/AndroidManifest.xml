@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegistrarUsuario" />
-        <activity android:name=".IniciarSesion"></activity>
+        <activity android:name=".IniciarSesion" />
+        <activity android:name=".PerfilSalud"></activity>
     </application>
 
 </manifest>
