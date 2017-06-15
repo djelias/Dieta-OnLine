@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Dieta-OnLine.iml" filepath="$PROJECT_DIR$/Dieta-OnLine.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/DietaOnLine.iml" filepath="$PROJECT_DIR$/DietaOnLine.iml" />
+>>>>>>> 6135640866da2489fc84fb26b6a23caafb833d19
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

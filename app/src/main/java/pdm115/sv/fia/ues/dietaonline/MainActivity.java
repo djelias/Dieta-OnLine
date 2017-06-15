@@ -34,5 +34,14 @@ public class MainActivity extends AppCompatActivity {
             }
             });
 
+        Button perfil =(Button)findViewById(R.id.prueba);
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perfil = new Intent(MainActivity.this, PerfilSalud.class);
+                startActivity(perfil);
+            }
+        });
+
     }
 }
