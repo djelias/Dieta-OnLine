@@ -10,12 +10,13 @@
     tools:context=".RegistrarUsuario">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <FrameLayout
@@ -25,12 +26,12 @@
             android:layout_weight="0.43"></FrameLayout>
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="144dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
             android:text="Dieta On-Line"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -39,18 +40,25 @@
             android:layout_weight="0.22"></FrameLayout>
 
         <Button
+            android:id="@+id/botonRegistrarse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registrarse"
-            android:id="@+id/botonRegistrarse"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="Registrarse" />
 
         <Button
+            android:id="@+id/botonIniciarSesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iniciar sesion"
-            android:id="@+id/botonIniciarSesion"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="Iniciar sesion" />
+
+        <Button
+            android:id="@+id/prueba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Button" />
 
     </LinearLayout>
 
