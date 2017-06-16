@@ -33,25 +33,6 @@
             android:layout_weight="0.05"
             android:textSize="30dp" />
 
-        <ImageButton
-            android:layout_width="109dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Ingresar foto (opcional)"
-            android:id="@+id/textView3"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.05"
-            android:enabled="false"
-            android:textSize="15dp"
-            android:textColor="#1a1919" />
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -70,7 +51,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
+                android:id="@+id/etnombre"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -92,7 +73,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2"
+                android:id="@+id/etusuario"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -116,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText3"
+                android:id="@+id/etpass"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -139,7 +120,7 @@
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
+                android:id="@+id/spinnerRegistro"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -164,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:ems="10"
-                android:id="@+id/editText4"
+                android:id="@+id/etemail"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -190,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
-                android:id="@+id/editText5"
+                android:id="@+id/ettel"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -199,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardar"
-            android:id="@+id/button4"
+            android:id="@+id/btnGuardarRegistro"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.08" />
 

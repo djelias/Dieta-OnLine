@@ -42,7 +42,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6"
+                android:id="@+id/etusuariolog"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText7"
+                android:id="@+id/etpasslog"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Iniciar sesion"
-            android:id="@+id/button3"
+            android:id="@+id/btniniciar"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.06" />
     </LinearLayout>
