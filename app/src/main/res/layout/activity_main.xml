@@ -60,6 +60,14 @@
             android:gravity="center"
             android:text="Perfil de Salud" />
 
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Menu"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 </RelativeLayout>

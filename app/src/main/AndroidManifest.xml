@@ -18,7 +18,8 @@
         <activity android:name=".RegistrarUsuario" />
         <activity android:name=".IniciarSesion" />
         <activity android:name=".PerfilSalud" />
-        <activity android:name=".CrearDieta"></activity>
+        <activity android:name=".CrearDieta" />
+        <activity android:name=".CrearMenu"></activity>
     </application>
 
 </manifest>

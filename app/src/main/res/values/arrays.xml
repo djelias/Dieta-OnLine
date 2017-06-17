@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Tipo">
+        <item>Proteina</item>
+        <item>Carbohidrato</item>
+        <item>Grasa animal</item>
+        <item>Grasa vegetal</item>
+    </string-array>
+    <string-array name="Dia">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sabado</item>
+        <item>Domingo</item>
+    </string-array>
+    <string-array name="Tiempo">
+        <item>Desayuno</item>
+        <item>Merienda 1</item>
+        <item>Almuerzo</item>
+        <item>Merienda 2</item>
+        <item>Cena</item>
+    </string-array>
+</resources>
