@@ -33,7 +33,8 @@ public class ControladorBD extends SQLiteOpenHelper {
             "create table ROL_PRIVILEGIO(ID_ROL integer NOT NULL, ID_PRIVILEGIO integer NOT NULL, PRIMARY KEY (ID_ROL, ID_PRIVILEGIO), " +
             "FOREIGN KEY(ID_ROL) REFERENCES ROL(ID_ROL), FOREIGN KEY(ID_PRIVILEGIO) REFERENCES PRIVILEGIO(ID_PRIVILEGIO)); " +
             "create table TIEMPO_COMIDA(ID_TIEMPO_COMIDA INTEGER PRIMARY KEY NOT NULL, PROTEINA varchar, CARBOHIDRATO varchar, VEGETAL varchar, FRUTA varchar); " +
-            "create table USUARIO(ID_USUARIO INTEGER PRIMARY KEY NOT NULL, ID_ROL integer, ID_PERFIL integer, NOMBRE varchar, CONTRASENA varchar, EMAIL varchar)";
+            "create table USUARIO(ID_USUARIO INTEGER PRIMARY KEY NOT NULL, ID_ROL integer, ID_PERFIL integer, NOMBRE varchar, CONTRASENA varchar, EMAIL varchar, TELEFONO varchar)"+
+            "FOREIGN KEY(ID_ROL) REFERENCES ROL(ID_ROL), FOREIGN KEY(ID_PERFIL) REFERENCES PERFIL(ID_PERFIL))";
 
     public ControladorBD(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);

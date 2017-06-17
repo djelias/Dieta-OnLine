@@ -12,7 +12,7 @@ public class RegistrarUsuario extends AppCompatActivity {
     EditText nombre, usuario, contraseña, email, telefono;
     Button btnGuardarRegistro;
 
-    ControladorBD base = new ControladorBD(this, "DBDieta", null, 1);
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 2);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +51,10 @@ public class RegistrarUsuario extends AppCompatActivity {
                 if(db != null)
                 {
                     int id = 1;
-                    String sqlInsert = "INSERT INTO usuario (id_usuario, id_rol, id_perfil, nombre, contraseña, email ) " + "VALUES (" + id + ", '" + nombreUsuario +"')";
+                    String sqlInsert = "INSERT INTO usuario (id_usuario, id_rol, id_perfil, nombre, contraseña, email, telefono ) " +
+                            "VALUES (" + id + ", " + null + ", " + null + ", " + nombreUsuario +", " + contraseñaUsuario +", " + emailUsuario +", " + telefonoUsuario + ")";
                     db.execSQL(sqlInsert);
+                    Toast.makeText(RegistrarUsuario.this,"Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 
                     db.close();
                 }
