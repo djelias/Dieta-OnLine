@@ -4,6 +4,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -80,12 +82,13 @@ public class PerfilSalud extends AppCompatActivity {
     }*/
 
     //campos del formulario
-    EditText edadPerfil;
-    EditText pesoPerfil;
-    CheckBox sexoPerfil;
-    EditText estaturaPerfil;
-    Spinner estadoSalud;
-    EditText alergias;
+    EditText edadPerfilSalud;
+    EditText pesoPerfilSalud;
+    CheckBox checkBoxMasculino, checkBoxFemenino; //agregar 2 checkbox
+    EditText estaturaPerfilSalud;
+    EditText alergiasPerfilSalud;
+    Spinner spinnerPerfilSalud;
+    String[] estados={"Lista de estados", "Excelente", "Bueno", "Regular","Malo"};
 
     //botones del formulario
     Button idGuardar;
@@ -99,25 +102,59 @@ public class PerfilSalud extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_salud);
 
-        edadPerfil     = (EditText) findViewById(R.id.edadPerfilSalud);
-        pesoPerfil     = (EditText) findViewById(R.id.pesoPerfilSalud);
-        sexoPerfil     = (CheckBox) findViewById(R.id.checkBoxMasculino);
-        sexoPerfil     = (CheckBox) findViewById(R.id.checkBoxFemenino);
-        estaturaPerfil = (EditText) findViewById(R.id.estaturaPerfilSalud);
-        estadoSalud    = (Spinner)  findViewById(R.id.spinnerPerfilSalud);
-        alergias       = (EditText) findViewById(R.id.alergiasPerfilSalud);
+
+
+        edadPerfilSalud     = (EditText) findViewById(R.id.edadPerfilSalud);
+        pesoPerfilSalud     = (EditText) findViewById(R.id.pesoPerfilSalud);
+        checkBoxMasculino   = (CheckBox) findViewById(R.id.checkBoxMasculino);
+        checkBoxFemenino    = (CheckBox) findViewById(R.id.checkBoxFemenino);
+        estaturaPerfilSalud = (EditText) findViewById(R.id.estaturaPerfilSalud);
+        spinnerPerfilSalud  = (Spinner)  findViewById(R.id.spinnerPerfilSalud);
+        final ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,estados);
+        spinnerPerfilSalud.setAdapter(adaptador);
+        alergiasPerfilSalud = (EditText) findViewById(R.id.alergiasPerfilSalud);
 
         idGuardar = (Button) findViewById(R.id.idGuardar);
         idGuardar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                int edad=Integer.parseInt(edadPerfil.getText().toString());
-                float peso=Float.parseFloat(pesoPerfil.getText().toString());
-                String sexo=sexoPerfil.getText().toString();
-                float estatura=Float.parseFloat(estaturaPerfil.getText().toString());
+                int edadPerfil=Integer.parseInt(edadPerfilSalud.getText().toString());
+                float pesoPerfil=Float.parseFloat(pesoPerfilSalud.getText().toString());
+                if (checkBoxMasculino.isChecked())
+                {
+                    String sexoPerfil=checkBoxMasculino.getText().toString();
+                }else {
+                    String sexoPerfil = checkBoxFemenino.getText().toString();
+                }
+                float estatura=Float.parseFloat(estaturaPerfilSalud.getText().toString());
                 //String estado=estadoSalud
-                String alergia=alergias.getText().toString();
+                //Spinner
+                spinnerPerfilSalud.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        switch(i){
+                            case 1:
+                                Toast to1 = Toast.makeText(getApplicationContext(), estados[i], Toast.LENGTH_LONG);
+                                //String to1=spinnerPerfilSalud.getTextDirection(to1);
+                                to1.show();
+                                spinnerPerfilSalud.setAdapter(adaptador);
+                                break;
+                            case 2:
+                                Toast to2 = Toast.makeText(getApplicationContext(), estados[i], Toast.LENGTH_LONG);
+                                spinnerPerfilSalud.setAdapter(adaptador);
+                                to2.show();
+                                break;
+                        }
+                    }
 
-                if(edad == 0|| peso == 0.0 || sexo.equals("") || estatura == 0 || alergia.equals(""))
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+                String alergia=alergiasPerfilSalud.getText().toString();
+
+                if(edadPerfil == 0|| pesoPerfil == 0.0 || /*sexoPerfil.equals("") ||*/ estatura == 0 || alergia.equals(""))
                 {
                     Toast.makeText(getApplicationContext(), "Campos faltantes", Toast.LENGTH_LONG).show();
                     return;
