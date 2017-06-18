@@ -44,7 +44,7 @@
                 tools:layout_editor_absoluteY="31dp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinnerTipo"
                 android:layout_width="119dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
@@ -70,7 +70,7 @@
                 tools:layout_editor_absoluteY="79dp" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -97,7 +97,7 @@
             tools:layout_editor_absoluteY="8dp">
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/date1"
                 android:layout_width="156dp"
                 android:layout_height="51dp"
                 android:layout_weight="1"
@@ -108,7 +108,7 @@
                 tools:layout_editor_absoluteY="182dp" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/date2"
                 android:layout_width="183dp"
                 android:layout_height="51dp"
                 android:layout_weight="1"
@@ -142,7 +142,7 @@
                 android:text="Rango de Edad:" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spinnerEdad"
                 android:layout_width="match_parent"
                 android:layout_height="39dp" />
         </LinearLayout>
@@ -162,14 +162,14 @@
                 android:text="Sexo:" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioMasc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Masculino" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioFem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -189,7 +189,7 @@
                 android:text="Padecimiento" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/spinnerPad"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -207,7 +207,7 @@
                 android:text="Otros" />
 
             <Spinner
-                android:id="@+id/spinner4"
+                android:id="@+id/spinnerOt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -226,7 +226,7 @@
                 android:text="Descipcion:" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.98"
