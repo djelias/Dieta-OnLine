@@ -1,11 +1,9 @@
 package pdm115.sv.fia.ues.dietaonline;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -148,7 +146,7 @@ public class PerfilSalud extends AppCompatActivity {
         idEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent perfil = new Intent(PerfilSalud.this, GestionarResultados.class);
+                Intent perfil = new Intent(PerfilSalud.this, GestionarEstadisticas.class);
                 startActivity(perfil);
             }
         });
