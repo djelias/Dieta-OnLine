@@ -22,4 +22,38 @@
         <item>Merienda 2</item>
         <item>Cena</item>
     </string-array>
+
+
+    <string-array name="estados">
+        <item>Excelente</item>
+        <item>Bueno</item>
+        <item>Regular</item>
+        <item>Malo</item>
+    </string-array>
+    <string-array name="tipos">
+        <item>Lineal</item>
+        <item>Barra</item>
+        <item>Punto</item>
+        <item>Pastel</item>
+    </string-array>
+    <string-array name="rangos">
+        <item>1-10</item>
+        <item>11-20</item>
+        <item>21-30</item>
+        <item>31-40</item>
+        <item>41-50</item>
+        <item>51-100</item>
+    </string-array>
+    <string-array name="padecimientos">
+        <item>Excelente</item>
+        <item>Bueno</item>
+        <item>Regular</item>
+        <item>Malo</item>
+    </string-array>
+    <string-array name="otros">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 </resources>

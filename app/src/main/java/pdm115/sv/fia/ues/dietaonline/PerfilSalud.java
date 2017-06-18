@@ -14,73 +14,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class PerfilSalud extends AppCompatActivity {
-    //atributos, construcotres, getters and setter del perfil de salud
-    /*public int edadPerfil;
-    public float pesoPerfil;
-    public String sexoPerfil;
-    public float estaturaPerfil;
-    public String estadoSalud;
-    public String alergias;
-
-    public PerfilSalud() {
-    }
-
-    public PerfilSalud(int edadPerfil, float pesoPerfil, String sexoPerfil, float estaturaPerfil, String estadoSalud, String alergias) {
-        this.edadPerfil = edadPerfil;
-        this.pesoPerfil = pesoPerfil;
-        this.sexoPerfil = sexoPerfil;
-        this.estaturaPerfil = estaturaPerfil;
-        this.estadoSalud = estadoSalud;
-        this.alergias = alergias;
-    }
-
-    public int getEdadPerfil() {
-        return edadPerfil;
-    }
-
-    public void setEdadPerfil(int edadPerfil) {
-        this.edadPerfil = edadPerfil;
-    }
-
-    public float getPesoPerfil() {
-        return pesoPerfil;
-    }
-
-    public void setPesoPerfil(float pesoPerfil) {
-        this.pesoPerfil = pesoPerfil;
-    }
-
-    public String getSexoPerfil() {
-        return sexoPerfil;
-    }
-
-    public void setSexoPerfil(String sexoPerfil) {
-        this.sexoPerfil = sexoPerfil;
-    }
-
-    public float getEstaturaPerfil() {
-        return estaturaPerfil;
-    }
-
-    public void setEstaturaPerfil(float estaturaPerfil) {
-        this.estaturaPerfil = estaturaPerfil;
-    }
-
-    public String getEstadoSalud() {
-        return estadoSalud;
-    }
-
-    public void setEstadoSalud(String estadoSalud) {
-        this.estadoSalud = estadoSalud;
-    }
-
-    public String getAlergias() {
-        return alergias;
-    }
-
-    public void setAlergias(String alergias) {
-        this.alergias = alergias;
-    }*/
 
     //campos del formulario
     EditText edadPerfilSalud;
@@ -89,7 +22,7 @@ public class PerfilSalud extends AppCompatActivity {
     EditText estaturaPerfilSalud;
     EditText alergiasPerfilSalud;
     Spinner spinnerPerfilSalud;
-    String[] estados={"Lista de estados", "Excelente", "Bueno", "Regular","Malo"};
+    //String[] estados={"Lista de estados", "Excelente", "Bueno", "Regular","Malo"};
 
     //botones del formulario
     Button idGuardar;
@@ -110,16 +43,25 @@ public class PerfilSalud extends AppCompatActivity {
         checkBoxMasculino   = (CheckBox) findViewById(R.id.checkBoxMasculino);
         checkBoxFemenino    = (CheckBox) findViewById(R.id.checkBoxFemenino);
         estaturaPerfilSalud = (EditText) findViewById(R.id.estaturaPerfilSalud);
-        spinnerPerfilSalud  = (Spinner)  findViewById(R.id.spinnerPerfilSalud);
+
+        /*spinnerPerfilSalud  = (Spinner)  findViewById(R.id.spinnerPerfilSalud);
         final ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,estados);
-        spinnerPerfilSalud.setAdapter(adaptador);
+        spinnerPerfilSalud.setAdapter(adaptador);*/
+
+        spinnerPerfilSalud = (Spinner) findViewById(R.id.spinnerPerfilSalud);
+        ArrayAdapter spinner_adapter = ArrayAdapter.createFromResource( this, R.array.estados , android.R.layout.simple_spinner_item);
+        spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPerfilSalud.setAdapter(spinner_adapter);
+
         alergiasPerfilSalud = (EditText) findViewById(R.id.alergiasPerfilSalud);
 
         idGuardar = (Button) findViewById(R.id.idGuardar);
         idGuardar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
+
                 int edadPerfil=Integer.parseInt(edadPerfilSalud.getText().toString());
                 float pesoPerfil=Float.parseFloat(pesoPerfilSalud.getText().toString());
+
                 if (checkBoxMasculino.isChecked())
                 {
                     String sexoPerfil=checkBoxMasculino.getText().toString();
@@ -127,9 +69,8 @@ public class PerfilSalud extends AppCompatActivity {
                     String sexoPerfil = checkBoxFemenino.getText().toString();
                 }
                 float estatura=Float.parseFloat(estaturaPerfilSalud.getText().toString());
-                //String estado=estadoSalud
-                //Spinner
-                spinnerPerfilSalud.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                String est=spinnerPerfilSalud.getSelectedItem().toString();
+                /*spinnerPerfilSalud.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         switch(i){
@@ -141,8 +82,18 @@ public class PerfilSalud extends AppCompatActivity {
                                 break;
                             case 2:
                                 Toast to2 = Toast.makeText(getApplicationContext(), estados[i], Toast.LENGTH_LONG);
-                                spinnerPerfilSalud.setAdapter(adaptador);
+                                //spinnerPerfilSalud.setAdapter(adaptador);
                                 to2.show();
+                                break;
+                            case 3:
+                                Toast to3 = Toast.makeText(getApplicationContext(), estados[i], Toast.LENGTH_LONG);
+                                //spinnerPerfilSalud.setAdapter(adaptador);
+                                to3.show();
+                                break;
+                            case 4:
+                                Toast to4 = Toast.makeText(getApplicationContext(), estados[i], Toast.LENGTH_LONG);
+                                //spinnerPerfilSalud.setAdapter(adaptador);
+                                to4.show();
                                 break;
                         }
                     }
@@ -151,7 +102,7 @@ public class PerfilSalud extends AppCompatActivity {
                     public void onNothingSelected(AdapterView<?> adapterView) {
 
                     }
-                });
+                });*/
 
                 String alergia=alergiasPerfilSalud.getText().toString();
 
@@ -162,30 +113,34 @@ public class PerfilSalud extends AppCompatActivity {
                 }
                 else
                 {
+
                     // Save the Data in Database
 
-                    SQLiteDatabase db = base.getWritableDatabase();
+                   /* SQLiteDatabase db = base.getWritableDatabase();
 
                     int total = 0;
 
                     if(db != null)
                     {
                         int id = 1;
-                        String sqlInsert = "INSERT INTO PERFIL (ID_PERFIL, ID_DIETA, ID_USUARIO, EDAD, PESO_INICIO, SEXO, ESTATURA, ESTADO_SALUD, ALERGIAS ) " + "VALUES (" + id + ")";
+                        String sqlInsert = "INSERT INTO PERFIL (ID_PERFIL, ID_DIETA, ID_USUARIO, EDAD, PESO_INICIO, SEXO, ESTATURA, ESTADO_SALUD, ALERGIAS ) " +
+                                "VALUES (" + id + ",  " + null + ", " + null + ", " + edadPerfil + ", " + pesoPerfil + ", " + null + ", " + estatura + ", " + null + ", " + alergia + " )";
                         db.execSQL(sqlInsert);
+                        Toast.makeText(PerfilSalud.this,"Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 
                         db.close();
-                    }
+                    }*/
+                    Toast.makeText(getApplicationContext(), "Datos ingresados: "+ edadPerfil +", " + null + "," + pesoPerfil +", " + estatura + ", " + est +", " + alergia +"", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        idGuardar =(Button)findViewById(R.id.idGuardar);
-        idGuardar.setOnClickListener(new View.OnClickListener() {
+        idActualizar =(Button)findViewById(R.id.idActualizar);
+        idActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent perfil = new Intent(PerfilSalud.this, CrearEstadistica.class);
-                startActivity(perfil);
+                Intent perf = new Intent(PerfilSalud.this, CrearEstadistica.class);
+                startActivity(perf);
             }
         });
 
