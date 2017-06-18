@@ -19,7 +19,9 @@
         <activity android:name=".IniciarSesion" />
         <activity android:name=".PerfilSalud" />
         <activity android:name=".CrearDieta" />
-        <activity android:name=".CrearMenu"></activity>
+        <activity android:name=".CrearMenu" />
+        <activity android:name=".CrearEstadistica" />
+        <activity android:name=".GestionarResultados"></activity>
     </application>
 
 </manifest>

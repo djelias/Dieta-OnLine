@@ -1,5 +1,6 @@
 package pdm115.sv.fia.ues.dietaonline;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -179,6 +180,23 @@ public class PerfilSalud extends AppCompatActivity {
             }
         });
 
+        idGuardar =(Button)findViewById(R.id.idGuardar);
+        idGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perfil = new Intent(PerfilSalud.this, CrearEstadistica.class);
+                startActivity(perfil);
+            }
+        });
+
+        idEliminar =(Button)findViewById(R.id.idEliminar);
+        idEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perfil = new Intent(PerfilSalud.this, GestionarResultados.class);
+                startActivity(perfil);
+            }
+        });
 
 
     }
