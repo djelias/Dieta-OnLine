@@ -18,7 +18,7 @@ public class CrearMenu extends AppCompatActivity {
     TextView caloriasRestantes;
     Button botonGuardar;
 
-    ControladorBD base = new ControladorBD(this, "DBDieta", null, 2);
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 8);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,27 +62,27 @@ public class CrearMenu extends AppCompatActivity {
                 String cant4 = cantifrut.getText().toString();
                 Integer num4 = Integer.parseInt(cant4);
 
-                if (proteina.equals("")||carbohidratos.equals("")||vegetales.equals("")||frutas.equals("")) {
+                if (prot.equals("")||carb.equals("")||veg.equals("")||frut.equals("")) {
                     Toast.makeText(getApplicationContext(), "Campos faltantes", Toast.LENGTH_LONG).show();
                     return;
                 } else {
                     // Save the Data in Database
 
-/*
+
                     SQLiteDatabase db = base.getWritableDatabase();
 
                     int total = 0;
 
                     if (db != null) {
                         int id = 1;
-                        String sqlInsert = "INSERT INTO usuario (id_usuario, id_rol, id_perfil, nombre, contraseña, email, telefono ) " +
-                                "VALUES (" + id + ", " + null + ", " + null + ", " + nombreUsuario + ", " + contraseñaUsuario + ", " + emailUsuario + ", " + telefonoUsuario + ")";
+                        String sqlInsert = "INSERT INTO TIEMPO_COMIDA (ID_TIEMPO_COMIDA, PROTEINA, CARBOHIDRATO, VEGETAL, FRUTA ) " +
+                                "VALUES (" + id + ", '" + prot + "', '" + carb + "', '" + veg + "', '" + frut + "')";
                         db.execSQL(sqlInsert);
-                        Toast.makeText(RegistrarUsuario.this, "Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CrearMenu.this, "Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 
                         db.close();
-                    }*/
-                    Toast.makeText(getApplicationContext(), "Datos ingresados: "+ dia +", " + tiempo +", " + prot + ", " + carb +", " + veg +"", Toast.LENGTH_LONG).show();
+                    }
+                    //Toast.makeText(getApplicationContext(), "Datos ingresados: "+ dia +", " + tiempo +", " + prot + ", " + carb +", " + veg +"", Toast.LENGTH_LONG).show();
 
                 }
             }

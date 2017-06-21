@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 public class CrearDieta extends AppCompatActivity {
 
-    EditText nombreDieta, cantidadCalorias, cantidadMeriendas, cantidadMenu;
+    EditText nombreDieta, cantidadCalorias, cantidadMeriendas, cantidadMenu, edadInicio, edadFin;
     Spinner rangoEdades;
     CheckBox checkF, checkM;
     Button btnCrearDieta;
@@ -27,12 +28,14 @@ public class CrearDieta extends AppCompatActivity {
         nombreDieta = (EditText) findViewById(R.id.etNombreDieta);
         cantidadCalorias = (EditText) findViewById(R.id.etCantidadCalorias);
         cantidadMeriendas = (EditText) findViewById(R.id.etCantidadMeriendas);
-        cantidadMenu = (EditText) findViewById(R.id.etCantidadMenus);
         rangoEdades = (Spinner) findViewById(R.id.spinnerRangoEdad);
+        ArrayAdapter spinner_adapter = ArrayAdapter.createFromResource( this, R.array.RangoEdad , android.R.layout.simple_spinner_item);
+        spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        rangoEdades.setAdapter(spinner_adapter);
         checkF = (CheckBox) findViewById(R.id.checkBoxF);
         checkM = (CheckBox) findViewById(R.id.checkBoxM);
 
-        btnCrearDieta = (Button) findViewById(R.id.btnCrearMenu);
+        btnCrearDieta = (Button) findViewById(R.id.btnGuardarDieta);
         btnCrearDieta.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 String nomDieta=nombreDieta.getText().toString();
@@ -40,8 +43,14 @@ public class CrearDieta extends AppCompatActivity {
                 Integer cantCal=Integer.parseInt(cant);
                 String cant2=cantidadMeriendas.getText().toString();
                 Integer cantMer=Integer.parseInt(cant2);
-                String cant3=cantidadMenu.getText().toString();
-                Integer cantMenu=Integer.parseInt(cant3);
+                String rango=rangoEdades.getSelectedItem().toString();
+
+                if (checkF.isChecked())
+                {
+                    String sexoPerfil=checkF.getText().toString();
+                }else {
+                    String sexoPerfil = checkM.getText().toString();
+                }
 
                 if(nombreDieta.equals("")||cantidadCalorias.equals("")||cantidadMeriendas.equals("")||cantidadMenu.equals(""))
                 {

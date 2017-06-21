@@ -151,7 +151,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.06"
+            android:layout_weight="0.24"
             android:layout_gravity="center_horizontal">
 
             <TextView
@@ -173,32 +173,11 @@
                 android:layout_weight="0.43"></FrameLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.06"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Cantidad de Menus Semanales: "
-                android:id="@+id/textView28" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/etCantidadMenus"
-                android:layout_weight="1" />
-        </LinearLayout>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crear Menu"
-            android:id="@+id/btnCrearMenu"
+            android:text="Guardar Dieta"
+            android:id="@+id/btnGuardarDieta"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>
