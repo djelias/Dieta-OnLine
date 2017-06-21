@@ -17,8 +17,8 @@ public class CrearMenu extends AppCompatActivity {
     Spinner spindia, spintiempo;
     TextView caloriasRestantes;
     Button botonGuardar;
-
-    ControladorBD base = new ControladorBD(this, "DBDieta", null, 8);
+    InstanciaControladorBD controlador = new InstanciaControladorBD();
+    apoyoCrearMenu apoyo = new apoyoCrearMenu();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,6 @@ public class CrearMenu extends AppCompatActivity {
         spinner_adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spintiempo.setAdapter(spinner_adapter2);
 
-
         botonGuardar = (Button) findViewById(R.id.btnGuardarMenu);
         botonGuardar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -67,21 +66,14 @@ public class CrearMenu extends AppCompatActivity {
                     return;
                 } else {
                     // Save the Data in Database
+                    int suma = apoyo.sumaCaloriasDia(num, num2, num3, num4);
+
+                    prot = prot + ", " + cant;
+                    carb = carb + ", " + cant2;
 
 
-                    SQLiteDatabase db = base.getWritableDatabase();
+                    controlador.insertarCrearMenu(prot, carb, veg, frut);
 
-                    int total = 0;
-
-                    if (db != null) {
-                        int id = 1;
-                        String sqlInsert = "INSERT INTO TIEMPO_COMIDA (ID_TIEMPO_COMIDA, PROTEINA, CARBOHIDRATO, VEGETAL, FRUTA ) " +
-                                "VALUES (" + id + ", '" + prot + "', '" + carb + "', '" + veg + "', '" + frut + "')";
-                        db.execSQL(sqlInsert);
-                        Toast.makeText(CrearMenu.this, "Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
-
-                        db.close();
-                    }
                     //Toast.makeText(getApplicationContext(), "Datos ingresados: "+ dia +", " + tiempo +", " + prot + ", " + carb +", " + veg +"", Toast.LENGTH_LONG).show();
 
                 }
