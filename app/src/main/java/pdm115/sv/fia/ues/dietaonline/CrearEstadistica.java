@@ -1,12 +1,17 @@
 package pdm115.sv.fia.ues.dietaonline;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class CrearEstadistica extends AppCompatActivity {
 
@@ -21,6 +26,8 @@ public class CrearEstadistica extends AppCompatActivity {
     Spinner spinnerPad;
     Spinner spinnerOt;
     EditText descripcion;
+
+    Button btnCrearEst;
 
     //spinners List
     String[] tipos={"Lista de tipos", "Lineal", "Barra", "Puntos","Pastel"};
@@ -38,20 +45,93 @@ public class CrearEstadistica extends AppCompatActivity {
         setContentView(R.layout.activity_crear_estadistica);
 
 
-        final ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,tipos);
-        spinnerTipo.setAdapter(adaptador);
+        //final ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,tipos);
+        //spinnerTipo.setAdapter(adaptador);
+        spinnerTipo = (Spinner) findViewById(R.id.spinnerTipo);
+        ArrayAdapter spinner_adapter = ArrayAdapter.createFromResource( this, R.array.tipos , android.R.layout.simple_spinner_item);
+        spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerTipo.setAdapter(spinner_adapter);
+
         titulo     = (EditText) findViewById(R.id.titulo);
         date1     = (EditText) findViewById(R.id.date1);
         date2     = (EditText) findViewById(R.id.date2);
-        final ArrayAdapter<String> adap2= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,rangos);
-        spinnerEdad.setAdapter(adap2);
+
+        //final ArrayAdapter<String> adap2= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,rangos);
+        //spinnerEdad.setAdapter(adap2);
+        spinnerEdad = (Spinner) findViewById(R.id.spinnerEdad);
+        ArrayAdapter spinner_adap = ArrayAdapter.createFromResource( this, R.array.rangos , android.R.layout.simple_spinner_item);
+        spinner_adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerEdad.setAdapter(spinner_adap);
+
         RadioMasc   = (RadioButton) findViewById(R.id.radioMasc);
         RadioFem    = (RadioButton) findViewById(R.id.radioFem);
-        final ArrayAdapter<String> adap3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,padecimientos);
-        spinnerPad.setAdapter(adap3);
-        final ArrayAdapter<String> adap4= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,otros);
-        spinnerOt.setAdapter(adap4);
+
+        //final ArrayAdapter<String> adap3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,padecimientos);
+        //spinnerPad.setAdapter(adap3);
+        //final ArrayAdapter<String> adap4= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,otros);
+        //spinnerOt.setAdapter(adap4);
+        spinnerPad = (Spinner) findViewById(R.id.spinnerPad);
+        ArrayAdapter spinner_adapt = ArrayAdapter.createFromResource( this, R.array.padecimientos , android.R.layout.simple_spinner_item);
+        spinner_adapt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPad.setAdapter(spinner_adapt);
+        spinnerOt = (Spinner) findViewById(R.id.spinnerOt);
+        ArrayAdapter spinner_adapte = ArrayAdapter.createFromResource( this, R.array.otros , android.R.layout.simple_spinner_item);
+        spinner_adapte.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerOt.setAdapter(spinner_adapte);
+
         descripcion = (EditText) findViewById(R.id.descripcion);
+
+        btnCrearEst = (Button) findViewById(R.id.btnCrearEst);
+        btnCrearEst.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                //lectura de datos
+                /*"create table ESTADISTICA(ID_ESTADISTICA INTEGER PRIMARY KEY NOT NULL, TIPO_GRAFICO varchar, TITULO varchar, SEXO varchar, PADECIMIENTO varchar, " +
+                        "DESCRIPCION varchar, FECHA_INICIO varchar, FECHA_FIN varchar, EDAD_INICIO varchar, EDAD_FIN varchar); " +*/
+                String tipo=spinnerTipo.getSelectedItem().toString();
+                String tituloEst=titulo.getText().toString();
+                String fechaI=date1.getText().toString();
+                String fechaF=date2.getText().toString();
+                String edad=spinnerEdad.getSelectedItem().toString();
+                //sexo
+                String padecimiento=spinnerPad.getSelectedItem().toString();
+                String otro=spinnerOt.getSelectedItem().toString();
+                if (RadioMasc.isChecked())
+                {
+                    String sexo=RadioMasc.getText().toString();
+                }else {
+                    String sexo = RadioFem.getText().toString();
+                }
+                String desc=descripcion.getText().toString();
+
+                if(titulo.equals("")||date1.equals("")||date2.equals("")||descripcion.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(), "Campos faltantes", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else
+                {
+                    // Save the Data in Database
+
+                    /*SQLiteDatabase db = base.getWritableDatabase();
+
+                    int total = 0;
+
+                    if(db != null)
+                    {
+                        int id = 1;
+                        String sqlInsert = "INSERT INTO ESTADISTICA (id_estadistica, tipo_grafico, titulo, sexo, padecimiento, descripcion, fecha_inicio, fecha_fin, edad_inicio, edad_fin,  ) " +
+                                "VALUES (" + id + ", " + null + ", " + tituloEst +", " + null +", " + null +", " + descripcion + ", " + fechaI + ", " + fechaF + ", "+ null +", "+ null +")";
+                        db.execSQL(sqlInsert);
+                        Toast.makeText(CrearEstadistica.this,"Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
+
+                        db.close();
+                    }*/
+                    Toast.makeText(getApplicationContext(), "Datos ingresados: "+ tipo +", " + tituloEst +", " + fechaI + ", " + fechaF +", " + edad +", " + padecimiento + ", " + otro + ", " + desc + ", ", Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
 
 
 
