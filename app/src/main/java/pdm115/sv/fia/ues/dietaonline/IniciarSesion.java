@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,26 +12,32 @@ import android.widget.Toast;
 
 
 public class IniciarSesion extends AppCompatActivity {
+
     EditText et1, et2;
-    private Cursor fila;
+    String[] campos = new String[] {"usuario", "contraseña"};
+    String[] args = new String[] {"usu1"};
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 13);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
-        et1 = (EditText) findViewById(R.id.etemail);
-        et2 = (EditText) findViewById(R.id.etpass);
-    }
+        et1 = (EditText) findViewById(R.id.etUsuarioLog);
+        et2 = (EditText) findViewById(R.id.etPassLog);
 
 
-    public void ingresar(View v) {
-        ControladorBD admin = new ControladorBD(this, "DBDieta", null, 12);
-        SQLiteDatabase db = admin.getWritableDatabase();
+
+
+
+    Button botonIniciarSesion = (Button) findViewById(R.id.btnLogin);
+    botonIniciarSesion.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View v) {
+        SQLiteDatabase db = base.getReadableDatabase();
 
         String usuario = et1.getText().toString();
         String contrasena = et2.getText().toString();
-        fila = db.rawQuery("select usuario,contrasena from usuario where usuario='" + usuario + "' and contrasena='" + contrasena + "'", null);
+        Cursor fila = db.rawQuery("select nombre, contrasena from usuario where nombre='" + usuario + "' and contrasena='" + contrasena + "'", null);
         //preguntamos si el cursor tiene algun valor almacenado
         if (fila.moveToFirst() == true) {
 
@@ -47,14 +52,15 @@ public class IniciarSesion extends AppCompatActivity {
                 //si son iguales entonces vamos a otra ventana
 
                 //Menu es una nueva actividad empty
-                Intent ven = new Intent(this, Menu.class);
+                Intent ven = new Intent(IniciarSesion.this, CrearMenu.class);
                 startActivity(ven);
 
                 //limpiamos las las cajas de texto
                 et1.setText("");
                 et2.setText("");
             }
-
         }
-    }
+        }
+    });
+}
 }

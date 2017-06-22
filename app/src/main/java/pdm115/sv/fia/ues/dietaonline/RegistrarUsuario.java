@@ -53,8 +53,8 @@ public class RegistrarUsuario extends AppCompatActivity {
                     // Save the Data in Database
                     if (db != null) {
 
-                        String sqlInsert = "INSERT INTO usuario (id_usuario, nombre, contrasena, email, telefono, rol ) " +
-                                "VALUES (" + id + ", '" + nombreUsuario + "', '" + contraseñaUsuario + "', '" + emailUsuario + "', '" + telefonoUsuario + "', '" + rolUsuario + "')";
+                        String sqlInsert = "INSERT INTO usuario (nombre, contrasena, email, telefono, rol ) " +
+                                "VALUES ('" + nombreUsuario + "', '" + contraseñaUsuario + "', '" + emailUsuario + "', '" + telefonoUsuario + "', '" + rolUsuario + "')";
                         db.execSQL(sqlInsert);
                         Toast.makeText(RegistrarUsuario.this, "Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 
