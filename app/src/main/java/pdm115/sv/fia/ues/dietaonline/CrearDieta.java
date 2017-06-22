@@ -47,9 +47,10 @@ public class CrearDieta extends AppCompatActivity {
 
                 if (checkF.isChecked())
                 {
-                    String sexoPerfil=checkF.getText().toString();
+                    String sexoPerfil= "Femenino";
+
                 }else {
-                    String sexoPerfil = checkM.getText().toString();
+                    String sexoPerfil = "Masculino";
                 }
 
                 if(nombreDieta.equals("")||cantidadCalorias.equals("")||cantidadMeriendas.equals("")||cantidadMenu.equals(""))
@@ -68,8 +69,8 @@ public class CrearDieta extends AppCompatActivity {
                     if(db != null)
                     {
                         int id = 1;
-                        String sqlInsert = "INSERT INTO dieta (id_dieta, id_menu, nombre, calorias_dia, sexo, meriendas, edad_inicio, edad_fin ) " +
-                                "VALUES (" + id + ", " + null + ", " + nomDieta +", " + cantCal +", " + null +", " + cantMer + ", " + null + ", " + null + ")";
+                        String sqlInsert = "INSERT INTO dieta (id_dieta, nombre, calorias_dia, sexo, meriendas, edad_inicio, edad_fin ) " +
+                                "VALUES (" + id + ", '" + nomDieta + "', " + cantCal + ", " + null + ", " + cantMer + ", " + null + ", " + null + ")";
                         db.execSQL(sqlInsert);
                         Toast.makeText(CrearDieta.this,"Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 

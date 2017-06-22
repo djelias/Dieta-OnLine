@@ -17,8 +17,7 @@ public class CrearMenu extends AppCompatActivity {
     Spinner spindia, spintiempo;
     TextView caloriasRestantes;
     Button botonGuardar;
-    InstanciaControladorBD controlador = new InstanciaControladorBD();
-    apoyoCrearMenu apoyo = new apoyoCrearMenu();
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 13);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +65,24 @@ public class CrearMenu extends AppCompatActivity {
                     return;
                 } else {
                     // Save the Data in Database
-                    int suma = apoyo.sumaCaloriasDia(num, num2, num3, num4);
+
 
                     prot = prot + ", " + cant;
                     carb = carb + ", " + cant2;
+                    veg = veg + ", " + cant3;
+                    frut = frut + ", " + cant4;
 
+                    SQLiteDatabase db = base.getWritableDatabase();
 
-                    controlador.insertarCrearMenu(prot, carb, veg, frut);
+                    if (db != null) {
+                        int id = 1;
+                        String sqlInsert = "INSERT INTO TIEMPO_COMIDA (ID_TIEMPO_COMIDA, PROTEINA, CARBOHIDRATO, VEGETAL, FRUTA ) " +
+                                "VALUES (" + id + ", '" + prot + "', '" + carb + "', '" + veg + "', '" + frut + "')";
+                        db.execSQL(sqlInsert);
+                        Toast.makeText(CrearMenu.this, "Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
+
+                        db.close();
+                    }
 
                     //Toast.makeText(getApplicationContext(), "Datos ingresados: "+ dia +", " + tiempo +", " + prot + ", " + carb +", " + veg +"", Toast.LENGTH_LONG).show();
 

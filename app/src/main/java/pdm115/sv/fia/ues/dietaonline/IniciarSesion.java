@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class IniciarSesion extends AppCompatActivity {
@@ -26,12 +27,12 @@ public class IniciarSesion extends AppCompatActivity {
 
 
     public void ingresar(View v) {
-        ControladorBD admin = new ControladorBD(this, "usuario", null, 1);
+        ControladorBD admin = new ControladorBD(this, "DBDieta", null, 12);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String usuario = et1.getText().toString();
         String contrasena = et2.getText().toString();
-        fila = db.rawQuery("select usuario,contrasena from usuarios where usuario='" + usuario + "' and contrasena='" + contrasena + "'", null);
+        fila = db.rawQuery("select usuario,contrasena from usuario where usuario='" + usuario + "' and contrasena='" + contrasena + "'", null);
         //preguntamos si el cursor tiene algun valor almacenado
         if (fila.moveToFirst() == true) {
 
@@ -41,6 +42,7 @@ public class IniciarSesion extends AppCompatActivity {
 
             //preguntamos si los datos ingresados son iguales
             if (usuario.equals(usua) && contrasena.equals(pass)) {
+                Toast.makeText(IniciarSesion.this, "Se ha logeado", Toast.LENGTH_SHORT).show();
 
                 //si son iguales entonces vamos a otra ventana
 
