@@ -17,17 +17,32 @@
         android:layout_alignParentStart="true">
 
         <Button
+            android:id="@+id/btnCrearDieta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crear Dieta"
-            android:id="@+id/btnCrearDieta"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="Crear Dieta" />
 
         <Button
+            android:id="@+id/btnGestionarUsuarios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gestionar Usuarios"
-            android:id="@+id/btnGestionarUsuarios"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="Gestionar Usuarios" />
+
+        <Button
+            android:id="@+id/btnCrearEstadistica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Crear Estadistica" />
+
+        <Button
+            android:id="@+id/btnCrearResultados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Ingresar Resultados" />
+
     </LinearLayout>
 </RelativeLayout>
