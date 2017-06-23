@@ -53,37 +53,6 @@
             android:layout_gravity="center_horizontal"
             android:text="Iniciar sesion" />
 
-        <Button
-            android:id="@+id/prueba"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Perfil de Salud" />
-
-        <Button
-            android:id="@+id/btnMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Menu"
-            android:layout_gravity="center_horizontal" />
-
-        <Button
-            android:id="@+id/btnDieta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Dieta"
-            android:layout_gravity="center_horizontal" />
-
-        <Button
-            android:id="@+id/btnBase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Base"
-            android:layout_gravity="center_horizontal" />
-
     </LinearLayout>
 
 </RelativeLayout>

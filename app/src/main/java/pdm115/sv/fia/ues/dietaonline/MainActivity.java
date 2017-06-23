@@ -35,39 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
             });
 
-        Button perfil =(Button)findViewById(R.id.prueba);
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent perfil = new Intent(MainActivity.this, PerfilSalud.class);
-                startActivity(perfil);
-            }
-        });
-
-        Button Menu =(Button)findViewById(R.id.btnMenu);
-        Menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MainActivity.this, CrearMenu.class);
-                startActivity(menu);
-            }
-        });
-
-        Button Base = (Button) findViewById(R.id.btnBase);
-        Base.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ControladorBD crearbase = new ControladorBD(null, "DBDieta", null, 1);
-                if(crearbase!=null)
-                    {
-                        Toast.makeText(getApplicationContext(), "Base de datos creada", Toast.LENGTH_LONG).show();
-                    }else {
-                    Toast.makeText(getApplicationContext(), "Base de datos NO creada", Toast.LENGTH_LONG).show();;
-                    }
 
 
-            }
-        });
 
 
     }

@@ -23,7 +23,8 @@
         <activity android:name=".CrearEstadistica" />
         <activity android:name=".GestionarEstadisticas" />
         <activity android:name=".IngresarResultados" />
-        <activity android:name=".GestionarResultados"></activity>
+        <activity android:name=".GestionarResultados" />
+        <activity android:name=".MenuAdministrador"></activity>
     </application>
 
 </manifest>

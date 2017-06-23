@@ -1,5 +1,6 @@
 package pdm115.sv.fia.ues.dietaonline;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ public class CrearDieta extends AppCompatActivity {
     CheckBox checkF, checkM;
     Button btnCrearDieta;
 
-    ControladorBD base = new ControladorBD(this, "DBDieta", null, 2);
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class CrearDieta extends AppCompatActivity {
                     String sexoPerfil = "Masculino";
                 }
 
-                if(nombreDieta.equals("")||cantidadCalorias.equals("")||cantidadMeriendas.equals("")||cantidadMenu.equals(""))
+                if(nomDieta.equals("")||cant.equals("")||cantMer.equals(""))
                 {
                     Toast.makeText(getApplicationContext(), "Campos faltantes", Toast.LENGTH_LONG).show();
                     return;
@@ -69,8 +70,8 @@ public class CrearDieta extends AppCompatActivity {
                     if(db != null)
                     {
                         int id = 1;
-                        String sqlInsert = "INSERT INTO dieta (id_dieta, nombre, calorias_dia, sexo, meriendas, edad_inicio, edad_fin ) " +
-                                "VALUES (" + id + ", '" + nomDieta + "', " + cantCal + ", " + null + ", " + cantMer + ", " + null + ", " + null + ")";
+                        String sqlInsert = "INSERT INTO dieta (nombre, calorias_dia, sexo, meriendas, edad_inicio, edad_fin ) " +
+                                "VALUES ('" + nomDieta + "', " + cantCal + ", " + null + ", " + cantMer + ", " + null + ", " + null + ")";
                         db.execSQL(sqlInsert);
                         Toast.makeText(CrearDieta.this,"Datos insertados en la base de datos correctamente", Toast.LENGTH_SHORT).show();
 
@@ -78,7 +79,10 @@ public class CrearDieta extends AppCompatActivity {
                     }
 
                 }
+                Intent ven = new Intent(CrearDieta.this, CrearMenu.class);
+                startActivity(ven);
             }
+
         });
     }
 }

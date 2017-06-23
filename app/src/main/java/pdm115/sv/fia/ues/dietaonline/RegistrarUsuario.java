@@ -16,7 +16,7 @@ public class RegistrarUsuario extends AppCompatActivity {
     Button btnGuardarRegistro;
     Spinner spinnerTipoUsuario;
     int id;
-    ControladorBD base = new ControladorBD(this, "DBDieta", null, 13);
+    ControladorBD base = new ControladorBD(this, "DBDieta", null, 3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
