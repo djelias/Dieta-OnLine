@@ -20,11 +20,11 @@
         <activity android:name=".PerfilSalud" />
         <activity android:name=".CrearDieta" />
         <activity android:name=".CrearMenu" />
-        <activity android:name=".CrearEstadistica" />
         <activity android:name=".GestionarEstadisticas" />
-        <activity android:name=".IngresarResultados" />
         <activity android:name=".GestionarResultados" />
-        <activity android:name=".MenuAdministrador"></activity>
+        <activity android:name=".MenuAdministrador" />
+        <activity android:name=".CrearEstadistica" />
+        <activity android:name=".IngresarResultados"></activity>
     </application>
 
 </manifest>

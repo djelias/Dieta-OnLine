@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MenuAdministrador extends AppCompatActivity {
 
-    Button est, result;
+    Button est, result, perfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,15 @@ public class MenuAdministrador extends AppCompatActivity {
             public void onClick(View v) {
                 Intent dieta = new Intent(MenuAdministrador.this, CrearDieta.class);
                 startActivity(dieta);
+            }
+        });
+
+        perfil =(Button) findViewById(R.id.btnCrearPerfil);
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent salud = new Intent(MenuAdministrador.this, PerfilSalud.class);
+                startActivity(salud);
             }
         });
 
