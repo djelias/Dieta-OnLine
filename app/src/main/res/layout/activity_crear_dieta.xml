@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/light_green"
     tools:context="pdm115.sv.fia.ues.dietaonline.CrearDieta">
 
     <LinearLayout
@@ -18,12 +19,16 @@
         android:weightSum="1">
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="cursive"
             android:text="Nueva Dieta"
-            android:id="@+id/textView3"
-            android:layout_gravity="center_horizontal" />
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -38,11 +43,13 @@
             android:layout_weight="0.06">
 
             <TextView
+                android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="monospace"
                 android:text="Nombre: "
-                android:id="@+id/textView22" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_grey" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -59,11 +66,13 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="monospace"
                 android:text="Rango de Edades: "
-                android:id="@+id/textView23" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_grey" />
 
             <Spinner
                 android:layout_width="wrap_content"
@@ -82,11 +91,13 @@
             android:weightSum="1">
 
             <TextView
+                android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="monospace"
                 android:text="Sexo: "
-                android:id="@+id/textView24" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_grey" />
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -122,11 +133,13 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="monospace"
                 android:text="Cantidad Calorias al Día: "
-                android:id="@+id/textView25" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_grey" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -155,17 +168,18 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="monospace"
                 android:text="Cantidad de Meriendas: "
-                android:id="@+id/textView27" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_grey" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etCantidadMeriendas"
-                android:layout_weight="1" />
+                android:id="@+id/etCantidadMeriendas" />
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -174,10 +188,12 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnGuardarDieta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/green"
             android:text="Guardar Dieta"
-            android:id="@+id/btnGuardarDieta"
-            android:layout_gravity="center_horizontal" />
+            android:textColor="@color/light_green" />
     </LinearLayout>
 </RelativeLayout>

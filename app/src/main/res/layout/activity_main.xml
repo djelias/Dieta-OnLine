@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,6 +16,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:background="@color/light_blue"
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="1">
@@ -27,11 +29,17 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="144dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="0.10"
+            android:fontFamily="cursive"
             android:text="Dieta On-Line"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            tools:textStyle="italic" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -41,17 +49,25 @@
 
         <Button
             android:id="@+id/botonRegistrarse"
+            style="@android:style/Widget.DeviceDefault.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Registrarse" />
+            android:backgroundTint="@color/cyan_50"
+            android:elevation="0dp"
+            android:text="Registrarse"
+            android:textAlignment="center"
+            android:textColor="?android:attr/textColorAlertDialogListItem" />
 
         <Button
             android:id="@+id/botonIniciarSesion"
+            style="@android:style/Widget.DeviceDefault.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Iniciar sesion" />
+            android:backgroundTint="@color/cyan_50"
+            android:text="Iniciar sesion"
+            android:textColor="?android:attr/textColorAlertDialogListItem" />
 
     </LinearLayout>
 

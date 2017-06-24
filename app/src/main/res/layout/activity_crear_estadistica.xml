@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_50"
     tools:context="pdm115.sv.fia.ues.dietaonline.CrearEstadistica">
 
     <LinearLayout
@@ -25,7 +26,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Crear Estadistica" />
+                android:fontFamily="cursive"
+                android:text="Crear Estadistica"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
         </LinearLayout>
 
         <LinearLayout
@@ -39,7 +45,9 @@
                 android:id="@+id/textView30"
                 android:layout_width="149dp"
                 android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Tipo de Grafico:"
+                android:textColor="@color/colorPrimaryDark"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="31dp" />
 
@@ -65,7 +73,9 @@
                 android:layout_width="133dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Titulo:"
+                android:textColor="@color/colorPrimaryDark"
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="79dp" />
 
@@ -75,6 +85,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif-condensed"
                 android:inputType="textPersonName"
                 tools:layout_editor_absoluteX="153dp"
                 tools:layout_editor_absoluteY="79dp" />
@@ -85,7 +96,9 @@
             android:id="@+id/textView35"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:text="Rango de Fechas:"
+            android:textColor="@color/colorPrimaryDark"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="139dp" />
 
@@ -102,8 +115,10 @@
                 android:layout_height="51dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif-condensed"
                 android:inputType="textPersonName"
                 android:text="##/##/####"
+                android:textColor="@color/colorPrimaryDark"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="182dp" />
 
@@ -113,8 +128,10 @@
                 android:layout_height="51dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif-condensed"
                 android:inputType="textPersonName"
                 android:text="##/##/####"
+                android:textColor="@color/colorPrimaryDark"
                 tools:layout_editor_absoluteX="194dp"
                 tools:layout_editor_absoluteY="182dp" />
 
@@ -124,7 +141,9 @@
             android:id="@+id/textView36"
             android:layout_width="match_parent"
             android:layout_height="27dp"
+            android:fontFamily="sans-serif-condensed"
             android:text="Datos:"
+            android:textColor="@color/colorPrimaryDark"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="237dp" />
 
@@ -139,7 +158,9 @@
                 android:id="@+id/textView38"
                 android:layout_width="144dp"
                 android:layout_height="38dp"
-                android:text="Rango de Edad:" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="Rango de Edad:"
+                android:textColor="@color/colorPrimaryDark" />
 
             <Spinner
                 android:id="@+id/spinnerEdad"
@@ -159,7 +180,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Sexo:" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="Sexo:"
+                android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
                 android:id="@+id/radioMasc"
@@ -186,7 +209,9 @@
                 android:id="@+id/textView40"
                 android:layout_width="142dp"
                 android:layout_height="39dp"
-                android:text="Padecimiento" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="Padecimiento"
+                android:textColor="@color/colorPrimaryDark" />
 
             <Spinner
                 android:id="@+id/spinnerPad"
@@ -204,7 +229,9 @@
                 android:id="@+id/textView41"
                 android:layout_width="141dp"
                 android:layout_height="28dp"
-                android:text="Otros" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="Otros"
+                android:textColor="@color/colorPrimaryDark" />
 
             <Spinner
                 android:id="@+id/spinnerOt"
@@ -223,7 +250,9 @@
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descipcion:" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="Descipcion:"
+                android:textColor="@color/colorPrimaryDark" />
 
             <EditText
                 android:id="@+id/descripcion"
@@ -231,8 +260,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.98"
                 android:ems="10"
+                android:fontFamily="sans-serif-condensed"
                 android:inputType="textPersonName"
-                android:text="escriba una breve descripcion" />
+                android:text="escriba una breve descripcion"
+                android:textColor="@color/colorPrimaryDark" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -241,14 +272,17 @@
 
                 <Button
                     android:id="@+id/btnCrearEst"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Crear" />
+                    android:layout_width="136dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_700"
+                    android:gravity="center_vertical|center_horizontal|center"
+                    android:text="Crear"
+                    android:textColor="@color/red"
+                    tools:gravity="center_vertical|center_horizontal|center" />
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

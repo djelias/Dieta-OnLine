@@ -7,5 +7,24 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="MyTheme" parent="Base.MyTheme"></style>
+
+    <style name="Base.MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimaryDark">@color/primary_700</item>
+        <item name="colorAccent">@color/accent_500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/bg_light</item>
+    </style>
+
+    <style name="MyTheme.Detail" parent="MyTheme"></style>
+
+    <color name="bg_light">#ffffff</color>
+
+    <style name="MyTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="MyTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>

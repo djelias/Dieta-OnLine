@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red"
     tools:context="pdm115.sv.fia.ues.dietaonline.IngresarResultados">
 
     <LinearLayout
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <TextView
             android:id="@+id/textView46"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:gravity="center"
             android:text="Ingresar Resultados"
+            android:textColor="@color/bg_light"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -31,7 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Peso Actual:" />
+                android:text="Peso Actual:"
+                android:textColor="@color/bg_light" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -39,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/cyan_50" />
 
         </LinearLayout>
 
@@ -47,7 +54,8 @@
             android:id="@+id/textView48"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Considera haber cumplido a un 100% la dieta?" />
+            android:text="Considera haber cumplido a un 100% la dieta?"
+            android:textColor="@color/bg_light" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,14 +67,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Si" />
+                android:text="Si"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
         </LinearLayout>
 
@@ -74,7 +86,8 @@
             android:id="@+id/textView49"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Si su respuesta fue no, indique el motivo:" />
+            android:text="Si su respuesta fue no, indique el motivo:"
+            android:textColor="@color/bg_light" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,25 +98,33 @@
                 android:id="@+id/checkBox3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="CheckBox"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="CheckBox"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
             <CheckBox
                 android:id="@+id/checkBox5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="CheckBox"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
             <CheckBox
                 android:id="@+id/checkBox6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="CheckBox"
+                android:textColor="@color/bg_light"
+                android:textColorLink="@color/grey" />
 
             <EditText
                 android:id="@+id/editText4"
@@ -123,14 +144,16 @@
                 android:id="@+id/textView50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Comentario" />
+                android:text="Comentario"
+                android:textColor="@color/bg_light" />
 
             <EditText
                 android:id="@+id/editText5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/cyan_50" />
 
         </LinearLayout>
 
@@ -156,4 +179,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
